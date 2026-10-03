@@ -25,6 +25,27 @@
                     <tr><th>ID</th><th>Score</th><th>Trigger PID</th><th>Description</th></tr>
                     
                     <tr>
+                        <td>23</td>
+                        <td><span class="badge-alert">90.0</span></td>
+                        <td>11612</td>
+                        <td>Ransomware behavioral threshold crossed. Activity footprint: {'create': 0, 'modify': 0, 'delete': 6, 'rename': 0}, High Entropy items: 0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>22</td>
+                        <td><span class="badge-alert">75.0</span></td>
+                        <td>11612</td>
+                        <td>Ransomware behavioral threshold crossed. Activity footprint: {'create': 0, 'modify': 0, 'delete': 5, 'rename': 0}, High Entropy items: 0</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>21</td>
+                        <td><span class="badge-alert">60.0</span></td>
+                        <td>11612</td>
+                        <td>Ransomware behavioral threshold crossed. Activity footprint: {'create': 0, 'modify': 0, 'delete': 4, 'rename': 0}, High Entropy items: 0</td>
+                    </tr>
+                    
+                    <tr>
                         <td>20</td>
                         <td><span class="badge-alert">100.0</span></td>
                         <td>11612</td>
@@ -108,33 +129,54 @@
                         <td>Ransomware behavioral threshold crossed. Activity footprint: {'create': 5, 'modify': 8, 'delete': 0, 'rename': 1}, High Entropy items: 1</td>
                     </tr>
                     
-                    <tr>
-                        <td>8</td>
-                        <td><span class="badge-alert">100.0</span></td>
-                        <td>11612</td>
-                        <td>Ransomware behavioral threshold crossed. Activity footprint: {'create': 5, 'modify': 7, 'delete': 0, 'rename': 1}, High Entropy items: 1</td>
-                    </tr>
-                    
-                    <tr>
-                        <td>7</td>
-                        <td><span class="badge-alert">95.0</span></td>
-                        <td>11612</td>
-                        <td>Ransomware behavioral threshold crossed. Activity footprint: {'create': 5, 'modify': 7, 'delete': 0, 'rename': 0}, High Entropy items: 0</td>
-                    </tr>
-                    
-                    <tr>
-                        <td>6</td>
-                        <td><span class="badge-alert">85.0</span></td>
-                        <td>11612</td>
-                        <td>Ransomware behavioral threshold crossed. Activity footprint: {'create': 5, 'modify': 6, 'delete': 0, 'rename': 0}, High Entropy items: 0</td>
-                    </tr>
-                    
                 </table>
             </div>
             <div class="section">
                 <h2>📊 Telemetry Streaming Events Tracked</h2>
                 <table>
                     <tr><th>Type</th><th>Target File Source Path</th><th>Entropy</th><th>Process Context</th></tr>
+                    
+                    <tr>
+                        <td><strong>DELETE</strong></td>
+                        <td>./rdrs/data/sandbox\random_text.txt</td>
+                        <td>0.0</td>
+                        <td>python.exe (11612)</td>
+                    </tr>
+                    
+                    <tr>
+                        <td><strong>DELETE</strong></td>
+                        <td>./rdrs/data/sandbox\financial_document_004.locked</td>
+                        <td>0.0</td>
+                        <td>python.exe (11612)</td>
+                    </tr>
+                    
+                    <tr>
+                        <td><strong>DELETE</strong></td>
+                        <td>./rdrs/data/sandbox\financial_document_003.locked</td>
+                        <td>0.0</td>
+                        <td>python.exe (11612)</td>
+                    </tr>
+                    
+                    <tr>
+                        <td><strong>DELETE</strong></td>
+                        <td>./rdrs/data/sandbox\financial_document_002.locked</td>
+                        <td>0.0</td>
+                        <td>python.exe (11612)</td>
+                    </tr>
+                    
+                    <tr>
+                        <td><strong>DELETE</strong></td>
+                        <td>./rdrs/data/sandbox\financial_document_001.locked</td>
+                        <td>0.0</td>
+                        <td>python.exe (11612)</td>
+                    </tr>
+                    
+                    <tr>
+                        <td><strong>DELETE</strong></td>
+                        <td>./rdrs/data/sandbox\financial_document_000.locked</td>
+                        <td>0.0</td>
+                        <td>python.exe (11612)</td>
+                    </tr>
                     
                     <tr>
                         <td><strong>MODIFY</strong></td>
@@ -195,48 +237,6 @@
                     <tr>
                         <td><strong>MODIFY</strong></td>
                         <td>./rdrs/data/sandbox\financial_document_002.docx</td>
-                        <td>0.0</td>
-                        <td>python.exe (11612)</td>
-                    </tr>
-                    
-                    <tr>
-                        <td><strong>MODIFY</strong></td>
-                        <td>./rdrs/data/sandbox\financial_document_002.docx</td>
-                        <td>0.0</td>
-                        <td>python.exe (11612)</td>
-                    </tr>
-                    
-                    <tr>
-                        <td><strong>RENAME</strong></td>
-                        <td>./rdrs/data/sandbox\financial_document_001.docx</td>
-                        <td>7.9592</td>
-                        <td>python.exe (11612)</td>
-                    </tr>
-                    
-                    <tr>
-                        <td><strong>MODIFY</strong></td>
-                        <td>./rdrs/data/sandbox\financial_document_001.docx</td>
-                        <td>0.0</td>
-                        <td>python.exe (11612)</td>
-                    </tr>
-                    
-                    <tr>
-                        <td><strong>MODIFY</strong></td>
-                        <td>./rdrs/data/sandbox\financial_document_001.docx</td>
-                        <td>0.0</td>
-                        <td>python.exe (11612)</td>
-                    </tr>
-                    
-                    <tr>
-                        <td><strong>RENAME</strong></td>
-                        <td>./rdrs/data/sandbox\financial_document_000.docx</td>
-                        <td>7.9576</td>
-                        <td>python.exe (11612)</td>
-                    </tr>
-                    
-                    <tr>
-                        <td><strong>MODIFY</strong></td>
-                        <td>./rdrs/data/sandbox\financial_document_000.docx</td>
                         <td>0.0</td>
                         <td>python.exe (11612)</td>
                     </tr>
