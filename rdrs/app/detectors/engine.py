@@ -3,9 +3,9 @@ import shutil
 from datetime import datetime, timedelta
 from collections import deque
 from loguru import logger
-from app.core.config import AppConfig
-from app.core.models import FileEventModel
-from app.database.connection import DBFileEvent, DBAlert, DBIncident
+from rdrs.app.core.config import AppConfig
+from rdrs.app.core.models import FileEventModel
+from rdrs.app.database.connection import DBFileEvent, DBAlert, DBIncident
 
 class DetectionEngine:
     def __init__(self, config: AppConfig, session_factory):

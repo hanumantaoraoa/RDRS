@@ -3,10 +3,9 @@ import sys
 from loguru import logger
 
 def setup_logger(log_dir: str):
-    """ Setup rotating log files (system, events, alerts, errors, audit)."""
-    os.makedirs(os.path.dirname(log_dir), exist_ok=True)
+    os.makedirs(log_dir, exist_ok=True)
     logger.remove()
-
+    
     # Shared common formatting template
     log_format = "{time:YYYY-MM-DD HH:mm:ss} | {level:7} | {message}"
 

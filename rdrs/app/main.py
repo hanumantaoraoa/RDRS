@@ -17,7 +17,7 @@ from app.dashboard.dashboard import get_dashboard_html
 
 # 1. Load Configurations (FR-1)
 config = load_config("rdrs/config.yaml")
-logger = setup_logger(config.system.log_file)
+logger = setup_logger(config.system.log_dir)
 
 # 2. Database Connection Initialization (FR-5)
 SessionMaker = init_db(config.system.database_url)

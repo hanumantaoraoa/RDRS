@@ -6,7 +6,7 @@ class SystemConfig(BaseModel):
     monitored_directory: str
     quarantine_directory: str
     database_url: str
-    log_file: str
+    log_dir: str
 
 class AnalysisConfig(BaseModel):
     window_seconds: int
@@ -41,6 +41,6 @@ def load_config(config_path: str = "rdrs/config.yaml") -> AppConfig:
     # Bootstrap critical working directories
     os.makedirs(config.system.monitored_directory, exist_ok=True)
     os.makedirs(config.system.quarantine_directory, exist_ok=True)
-    os.makedirs(os.path.dirname(config.system.log_file), exist_ok=True)
+    os.makedirs(os.path.dirname(config.system.log_dir), exist_ok=True)
     
     return config

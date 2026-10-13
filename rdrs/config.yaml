@@ -2,7 +2,7 @@ system:
   monitored_directory: "./rdrs/data/sandbox"
   quarantine_directory: "./rdrs/data/quarantine"
   database_url: "sqlite:///./rdrs/data/rdrs.db"
-  log_file: "./rdrs/logs/rdrs.log"
+  log_dir: "./rdrs/logs/"
 
 analysis:
   window_seconds: 10
