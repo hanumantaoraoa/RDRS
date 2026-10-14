@@ -17,19 +17,23 @@ from app.dashboard.dashboard import get_dashboard_html
 
 # 1. Load Configurations (FR-1)
 config = load_config("rdrs/config.yaml")
-logger = setup_logger(config.system.log_dir)
 
-# 2. Database Connection Initialization (FR-5)
+# 2. Setup Multi-File Segregated Logger Core (FR-11)
+logger = setup_logger(config.system.log_dir)
+logger.bind(system=True).info("RDRS Logging engine initialized successfully across system channels.")
+
+# 3. Database Connection Initialization (FR-5)
 SessionMaker = init_db(config.system.database_url)
 init_api_session(SessionMaker)
 
-# 3. Detection Engine Strategy Instantiation (FR-6, FR-7, FR-8)
+# 4. Detection Engine Strategy Instantiation (FR-6, FR-7, FR-8)
 engine = DetectionEngine(config, SessionMaker)
 
-# 4. File-System Event Watcher Core Bootstrapping (FR-2, FR-4)
+# 5. File-System Event Watcher Core Bootstrapping (FR-2, FR-4)
 observer_worker = start_file_monitor(config, engine, SessionMaker)
+logger.bind(system=True).info(f"Watchdog worker polling started on path: {config.system.monitored_directory}")
 
-# 5. REST API Layer Assembly Construction (FR-10)
+# 6. REST API Layer Assembly Construction (FR-10)
 app = FastAPI(title="Ransomware Detection and Response System Endpoint Core")
 app.include_router(api_router, prefix="/api")
 
