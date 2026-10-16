@@ -1,0 +1,11 @@
+[
+    {
+        "incident_id": 1,
+        "threat_score": 40.0,
+        "threat_level": "Warning",
+        "reason_matrix": "High entropy payload footprint identified across targets. | Correlated resource computational execution utilization spike observed.",
+        "suspect_binary": "pycharm64.exe",
+        "status_action": "Simulated Interdiction",
+        "timestamp": "2026-10-16 09:56:03.712734"
+    }
+]

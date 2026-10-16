@@ -1,0 +1,2 @@
+INCIDENT_ID,THREAT_SCORE,THREAT_LEVEL,DETERMINATION_REASON,SUSPECT_PROCESS,STATUS,TIMESTAMP
+1,40.0,Warning,High entropy payload footprint identified across targets. | Correlated resource computational execution utilization spike observed.,pycharm64.exe,Simulated Interdiction,2026-10-16 09:56:03.712734

@@ -1,0 +1,1 @@
+2026-10-16 15:26:03.711 | WARNING  | app.detectors.engine:process_telemetry:79 - [ALERT MATCHED] Risk Calculated: 40.0 [Warning] - Reason: High entropy payload footprint identified across targets. | Correlated resource computational execution utilization spike observed.
