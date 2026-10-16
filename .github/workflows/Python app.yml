@@ -38,10 +38,11 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: run RDRS Program in the bcakground
       run: |
-           Start-Job -ScriptBlock { & "python -m rdrs.app.main" }
+           python -m app.main
+           # Start-Job -ScriptBlock { & "python -m app.main" }
     - name: Test with pytest
       run: |
-       python -m pytest rdrs/tests/
+       python -m pytest tests/
     - name: Modify index.html using Commit and push via git
       shell: powershell
       run: |
