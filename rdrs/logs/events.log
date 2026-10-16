@@ -1,0 +1,9 @@
+2026-10-16 15:25:10.387 | DEBUG    | app.detectors.monitor:record_and_dispatch:34 - [TELEMETRY] CREATED captured for target: ./data/sandbox\random_text.txt
+2026-10-16 15:25:10.794 | DEBUG    | app.detectors.monitor:record_and_dispatch:34 - [TELEMETRY] MODIFIED captured for target: ./data/sandbox\random_text.txt
+2026-10-16 15:25:19.927 | DEBUG    | app.detectors.monitor:record_and_dispatch:34 - [TELEMETRY] MODIFIED captured for target: ./data/sandbox\random_text.txt
+2026-10-16 15:25:20.314 | DEBUG    | app.detectors.monitor:record_and_dispatch:34 - [TELEMETRY] MODIFIED captured for target: ./data/sandbox\random_text.txt
+2026-10-16 15:25:39.730 | DEBUG    | app.detectors.monitor:record_and_dispatch:34 - [TELEMETRY] MODIFIED captured for target: ./data/sandbox\random_text.txt
+2026-10-16 15:25:40.209 | DEBUG    | app.detectors.monitor:record_and_dispatch:34 - [TELEMETRY] MODIFIED captured for target: ./data/sandbox\random_text.txt
+2026-10-16 15:26:02.516 | DEBUG    | app.detectors.monitor:record_and_dispatch:34 - [TELEMETRY] MODIFIED captured for target: ./data/sandbox\random_text.txt
+2026-10-16 15:26:03.034 | DEBUG    | app.detectors.monitor:record_and_dispatch:34 - [TELEMETRY] MODIFIED captured for target: ./data/sandbox\random_text.txt
+2026-10-16 15:26:03.711 | WARNING  | app.detectors.engine:process_telemetry:79 - [ALERT MATCHED] Risk Calculated: 40.0 [Warning] - Reason: High entropy payload footprint identified across targets. | Correlated resource computational execution utilization spike observed.
