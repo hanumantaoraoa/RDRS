@@ -42,18 +42,3 @@ jobs:
     - name: Test with pytest
       run: |
        python -m pytest tests/test_rdrs.py
-    - name: Modify index.html using Commit and push via git
-      shell: powershell
-      run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@://github.com"
-          git add index.html
-          
-          # Check if there are changes staged for commit
-          git diff --quiet --staged
-          if ($LASTEXITCODE -ne 0) {
-              git commit -m "Update index.html"
-              git push
-          } else {
-              Write-Output "No changes to commit."
-          }
