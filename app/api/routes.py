@@ -7,6 +7,7 @@ from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session, get_session
 from app.database.connection import SessionLocal
 from app.database.models import AlertRecord, FileEventRecord, ProcessRecord
+from app.core.config import load_config
 
 router = APIRouter()
 config = load_config()
