@@ -3,6 +3,7 @@ system:
   quarantine_dir: "./data/quarantine"
   watch_paths:
     - "./data/sandbox"
+  gh_pages_dir: "docs"
 
 thresholds:
   entropy_critical: 7.2
