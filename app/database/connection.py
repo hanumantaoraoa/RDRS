@@ -12,14 +12,13 @@ if db_dir:
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
+engine = create_engine(config.database.url, connect_args={"check_same_thread": False})
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+
 _SessionMaker = None
 
 def init_db(db_url: str):
-    # FR-5: Initialize SQLite Database
-    global _SessionMaker
-    engine = create_engine(db_url, connect_args={"check_same_thread": False} if "sqlite" in db_url else {})
-    Base.metadata.create_all(engine)
-    _SessionMaker = sessionmaker(bind=engine)
+    Base.metadata.create_all(bind=engine)
 
 def get_session():
     if _SessionMaker is None:
