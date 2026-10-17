@@ -15,3 +15,7 @@ SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 def init_db():
     Base.metadata.create_all(bind=engine)
+def get_session():
+    if _SessionMaker is None:
+        raise RuntimeError("Database engine has not been initialized.")
+    return _SessionMaker()
