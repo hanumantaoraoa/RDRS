@@ -42,3 +42,29 @@ def alerts_endpoint(db: Session = Depends(get_db_context)):
 @router.get("/events")
 def events_endpoint(db: Session = Depends(get_db_context)):
     return db.query(FileEventRecord).order_by(FileEventRecord.timestamp.desc()).limit(100).all()
+    @router.post("/export/gh-pages")
+
+
+@router.post("/export/gh-pages")
+def export_gh_pages():
+    """Generates the static JSON state for the GitHub Pages host monitoring webpage."""
+    session = get_session()
+    alerts = session.query(DBAlert).order_by(DBAlert.timestamp.desc()).all()
+    events_count = session.query(DBFileEvent).count()
+
+    payload = {
+        "last_updated": str(datetime.datetime.utcnow()),
+        "total_events": events_count,
+        "alerts": [{"timestamp": str(a.timestamp), "pid": a.pid, "process": a.process_name, "score": a.threat_score,
+                    "desc": a.description} for a in alerts]
+    }
+    session.close()
+
+    out_dir = config.system.gh_pages_dir
+    os.makedirs(out_dir, exist_ok=True)
+
+    with open(os.path.join(out_dir, "dashboard_data.json"), "w") as f:
+        json.dump(payload, f, indent=2)
+
+    return JSONResponse({"status": "exported", "target_dir": out_dir})
+
