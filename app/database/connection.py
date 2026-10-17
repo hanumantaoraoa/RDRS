@@ -16,7 +16,7 @@ SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 _SessionMaker = None
 
 def init_db(db_url: str):
-     global _SessionMaker
+    global _SessionMaker
     engine = create_engine(config.database.url, connect_args={"check_same_thread": False} if "sqlite" in config.database.url else {})
     Base.metadata.create_all(engine)
     _SessionMaker = sessionmaker(bind=engine)
