@@ -42,8 +42,6 @@ def alerts_endpoint(db: Session = Depends(get_db_context)):
 @router.get("/events")
 def events_endpoint(db: Session = Depends(get_db_context)):
     return db.query(FileEventRecord).order_by(FileEventRecord.timestamp.desc()).limit(100).all()
-    @router.post("/export/gh-pages")
-
 
 @router.post("/export/gh-pages")
 def export_gh_pages():
