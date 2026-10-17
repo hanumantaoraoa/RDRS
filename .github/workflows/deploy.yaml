@@ -43,6 +43,7 @@ jobs:
       env:
         PYTHONPATH: .
       run: |
+        python -m app.main &
         pytest --cov=app tests/
 
     - name: Build Application System and Extract Dashboard Telemetry
