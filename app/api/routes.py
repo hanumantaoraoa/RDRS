@@ -47,8 +47,8 @@ def events_endpoint(db: Session = Depends(get_db_context)):
 def export_gh_pages():
     """Generates the static JSON state for the GitHub Pages host monitoring webpage."""
     session = get_session()
-    alerts = session.query(DBAlert).order_by(DBAlert.timestamp.desc()).all()
-    events_count = session.query(DBFileEvent).count()
+    alerts = session.query(AlertRecord).order_by(AlertRecord.timestamp.desc()).all()
+    events_count = session.query(FileEventRecord).count()
 
     payload = {
         "last_updated": str(datetime.datetime.utcnow()),
