@@ -10,6 +10,8 @@ db_dir = os.path.dirname(db_path_raw)
 if db_dir:
     os.makedirs(db_dir, exist_ok=True)
 
+SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+
 _SessionMaker = None
 
 def init_db(db_url: str):
