@@ -10,8 +10,6 @@ db_dir = os.path.dirname(db_path_raw)
 if db_dir:
     os.makedirs(db_dir, exist_ok=True)
 
-SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-
 engine = create_engine(config.database.url, connect_args={"check_same_thread": False})
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
