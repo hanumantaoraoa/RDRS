@@ -16,7 +16,7 @@ permissions:
 jobs:
   build:
 
-    runs-on: self-hosted
+    runs-on: ubuntu-slim
     steps:
     - uses: actions/checkout@v4
     - name: Set up Python 3.10.11
