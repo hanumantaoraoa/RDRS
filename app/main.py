@@ -17,9 +17,9 @@ def run_web_panel(host: str, port: int):
 
 def main():
     setup_logging()
-    init_db(config.database.url)
     config = load_config()
-
+    init_db(config.database.url)
+    
     engine = DetectionEngine()
 
     # Initialize Core Watchdog Telemetry Array
