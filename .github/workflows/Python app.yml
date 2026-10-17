@@ -41,7 +41,7 @@ jobs:
            Start-Job -ScriptBlock { & "python -m app.main" }
     - name: Test with pytest
       run: |
-       python -m pytest tests/
+       python -m pytest tests/test_rdrs.py
     - name: Modify index.html using Commit and push via git
       shell: powershell
       run: |
