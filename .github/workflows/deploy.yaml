@@ -73,8 +73,8 @@ jobs:
     - name: Ensure Static HTML Present
       run: |
         # Verifies the docs folder exists and injects default index if missing
-        mkdir -p docs
-        if [ ! -f docs/index.html ]; then
+        # mkdir -p docs
+        # if [ ! -f docs/index.html ]; then
           cat << 'EOF' > docs/index.html
           <!DOCTYPE html>
           <html>
@@ -100,11 +100,11 @@ jobs:
           </body>
           </html>
         EOF
-        fi
+        # fi
 
     - name: Deploy Static Webpage Assets to GitHub Pages Branch
       uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./docs
+        publish_dir: .docs
         publish_branch: gh-pages
