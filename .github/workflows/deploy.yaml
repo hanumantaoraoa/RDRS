@@ -43,7 +43,7 @@ jobs:
       env:
         PYTHONPATH: .
       run: |
-        pytest --cov=app tests/test_rdrs.py
+        pytest --cov=app tests/test_attack.py
 
     - name: Build Application System and Extract Dashboard Telemetry
       env:
