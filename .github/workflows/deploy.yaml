@@ -31,13 +31,13 @@ jobs:
 
     - name: Install System Dependencies
       run: |
-        sudo apt-get update
-        sudo apt-get install -y procps gcc
+        # sudo apt-get update
+        # sudo apt-get install -y procps gcc
 
     - name: Install Python Package Dependencies
       run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
+        # python -m pip install --upgrade pip
+        # pip install -r requirements.txt
     
     - name: Execute Automated Testing Framework
       env:
