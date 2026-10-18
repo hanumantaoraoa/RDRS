@@ -18,7 +18,9 @@ jobs:
   test-and-build:
     name: Run Telemetry Suite and Compile Static Assets
     runs-on: self-hosted
-
+    defaults:
+      run:
+        shell: bash # Sets bash as the default shell for all run steps
     steps:
     - name: Checkout Code Repository
       uses: actions/checkout@v4
