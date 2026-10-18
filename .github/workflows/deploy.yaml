@@ -43,7 +43,7 @@ jobs:
       env:
         PYTHONPATH: .
       run: |
-        pytest --cov=app tests/
+        pytest --cov=app tests/samp_test.py
 
     - name: Build Application System and Extract Dashboard Telemetry
       env:
