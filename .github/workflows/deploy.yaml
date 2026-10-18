@@ -51,9 +51,9 @@ jobs:
         PYTHONPATH: .
       run: |
         # Create configuration if missing, ensuring simulation mode is running
-        if [ ! -f config.yaml ]; then
-          echo -e "system:\n  simulation_mode: true\n  gh_pages_dir: 'docs'" > config.yaml
-        fi
+        # if [ ! -f config.yaml ]; then
+          # echo -e "system:\n  simulation_mode: true\n  gh_pages_dir: 'docs'" > config.yaml
+        # fi
         
         # Execute the python generator script directly to output static assets to docs/
         python -c "
