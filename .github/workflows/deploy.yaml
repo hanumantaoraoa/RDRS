@@ -18,9 +18,7 @@ jobs:
   test-and-build:
     name: Run Telemetry Suite and Compile Static Assets
     runs-on: self-hosted
-    defaults:
-      run:
-        shell: bash # Sets bash as the default shell for all run steps
+    
     steps:
     - name: Checkout Code Repository
       uses: actions/checkout@v4
@@ -52,10 +50,11 @@ jobs:
       env:
         PYTHONPATH: .
       run: |
+        shell: bash # Sets bash as the default shell for all run steps
         # Create configuration if missing, ensuring simulation mode is running
-        # if [ ! -f config.yaml ]; then
-          # echo -e "system:\n  simulation_mode: true\n  gh_pages_dir: 'docs'" > config.yaml
-        # fi
+        if [ ! -f config.yaml ]; then
+            echo -e "system:\n  simulation_mode: true\n  gh_pages_dir: 'docs'" > config.yaml
+        fi
         
         # Execute the python generator script directly to output static assets to docs/
         python -c "
@@ -75,9 +74,9 @@ jobs:
     - name: Ensure Static HTML Present
       run: |
         # Verifies the docs folder exists and injects default index if missing
-        # mkdir -p docs
-        # if [ ! -f docs/index.html ]; then
-          cat << 'EOF' >> docs/index.html
+        mkdir -p docs
+        if [ ! -f docs/index.html ]; then
+          cat << 'EOF' > docs/index.html
           <!DOCTYPE html>
           <html>
           <head>
@@ -102,7 +101,7 @@ jobs:
           </body>
           </html>
         EOF
-        # fi
+        fi
 
     - name: Deploy Static Webpage Assets to GitHub Pages Branch
       uses: peaceiris/actions-gh-pages@v4
