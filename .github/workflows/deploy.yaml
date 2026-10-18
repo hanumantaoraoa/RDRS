@@ -36,20 +36,20 @@ jobs:
 
     - name: Install Python Package Dependencies
       run: |
+        python -m pip install --upgrade pip
         pip install -r requirements.txt
 
     - name: Execute Automated Testing Framework
       env:
         PYTHONPATH: .
       run: |
-        python -m pip install --upgrade pip
+        python -m app.main &
         pytest --cov=app tests/test_rdrs.py
 
     - name: Build Application System and Extract Dashboard Telemetry
       env:
         PYTHONPATH: .
       run: |
-        python -m app.amin &
         # Create configuration if missing, ensuring simulation mode is running
         if [ ! -f config.yaml ]; then
           echo -e "system:\n  simulation_mode: true\n  gh_pages_dir: 'docs'" > config.yaml
