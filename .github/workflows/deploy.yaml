@@ -40,15 +40,15 @@ jobs:
         pip install -r requirements.txt
 
     - name: Get Runner IP
-    id: ip
-    run: |
-      ipv4=$(curl --silent https://api.ipify.org)
-      echo "ipv4=$ipv4" >> $GITHUB_OUTPUT
-      echo "The runner's public IP is: $ipv4"
+      id: ip
+      run: |
+       ipv4=$(curl --silent https://api.ipify.org)
+       echo "ipv4=$ipv4" >> $GITHUB_OUTPUT
+       echo "The runner's public IP is: $ipv4"
 
     - name: Use the IP in a subsequent step
-    run: |
-      echo "Connecting from ${{ steps.ip.outputs.ipv4 }}"
+      run: |
+        echo "Connecting from ${{ steps.ip.outputs.ipv4 }}"
 
     - name: Execute Automated Testing Framework
       env:
