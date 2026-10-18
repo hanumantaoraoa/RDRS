@@ -75,7 +75,7 @@ jobs:
         # Verifies the docs folder exists and injects default index if missing
         # mkdir -p docs
         # if [ ! -f docs/index.html ]; then
-          cat << 'EOF' > docs/index.html
+          cat << 'EOF' >> docs/index.html
           <!DOCTYPE html>
           <html>
           <head>
