@@ -46,6 +46,10 @@ jobs:
         # python -m app.main
         # python -m tests.test_attack
 
+    - name: Setup WSL
+      uses: Vampire/setup-wsl@v7
+      with:
+          distribution: Ubuntu-22.04
     - name: Build Application System and Extract Dashboard Telemetry
       env:
         PYTHONPATH: .
