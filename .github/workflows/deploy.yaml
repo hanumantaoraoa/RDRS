@@ -46,16 +46,12 @@ jobs:
         # python -m app.main
         # python -m tests.test_attack
 
-    - name: Setup WSL
-      uses: Vampire/setup-wsl@v7
-      with:
-          distribution: Ubuntu-22.04
+    
     - name: Build Application System and Extract Dashboard Telemetry
       env:
         PYTHONPATH: .
       run: |
-        shell: wsl-bash {0} # Sets bash as the default shell for all run steps
-        # Create configuration if missing, ensuring simulation mode is running
+       # Create configuration if missing, ensuring simulation mode is running
         if [ ! -f config.yaml ]; then
             echo -e "system:\n  simulation_mode: true\n  gh_pages_dir: 'docs'" > config.yaml
         fi
