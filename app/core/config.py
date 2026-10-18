@@ -1,5 +1,5 @@
 import os
-from pyyaml import yaml
+import yaml
 from pydantic import BaseModel
 from typing import List
 
