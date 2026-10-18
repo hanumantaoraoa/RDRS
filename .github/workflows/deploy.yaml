@@ -50,7 +50,7 @@ jobs:
       env:
         PYTHONPATH: .
       run: |
-        shell: bash # Sets bash as the default shell for all run steps
+        shell: wsl-bash {0} # Sets bash as the default shell for all run steps
         # Create configuration if missing, ensuring simulation mode is running
         if [ ! -f config.yaml ]; then
             echo -e "system:\n  simulation_mode: true\n  gh_pages_dir: 'docs'" > config.yaml
