@@ -6,7 +6,7 @@ import datetime
 from fastapi import APIRouter, Depends
 from fastapi.responses import StreamingResponse, JSONResponse
 from sqlalchemy.orm import Session
-from app.database.connection import SessionLocal, get_session, DBFileEvent, DBAlert
+from app.database.connection import SessionLocal
 from app.database.models import AlertRecord, FileEventRecord, ProcessRecord
 from app.core.config import load_config
 
