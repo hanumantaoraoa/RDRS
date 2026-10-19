@@ -13,5 +13,5 @@ if db_dir:
 engine = create_engine(config.database.url, connect_args={"check_same_thread": False})
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
-def init_db():
+def init_db(db_url: str):
     Base.metadata.create_all(bind=engine)
