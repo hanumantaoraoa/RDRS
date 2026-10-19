@@ -106,9 +106,9 @@ jobs:
     - name: Deploy Static Webpage Assets to GitHub Pages Branch
       uses: peaceiris/actions-gh-pages@v4
       with:
-        branch: main
-        folder: build
+        branch: gh-pages
         github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_branch: main
         publish_dir: ./docs
     # - name: publish to mainn
       # run: |
