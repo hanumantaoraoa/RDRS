@@ -51,7 +51,7 @@ def events_endpoint(db: Session = Depends(get_db_context)):
     return db.query(FileEventRecord).order_by(FileEventRecord.timestamp.desc()).limit(100).all()@api_router.post("/export/gh-pages")
 def export_gh_pages():
     """Generates the static JSON state for the GitHub Pages host monitoring webpage."""
-    session = get_session()
+    session = SessionLocal()
     alerts = session.query(AlertRecord).order_by(AlertRecord.timestamp.desc()).all()
     events_count = session.query(DBFileEvent).count()
 
