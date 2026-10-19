@@ -99,7 +99,7 @@ jobs:
               </script>
           </body>
           </html>
-        EOF
+          EOF
         
 
     - name: Deploy Static Webpage Assets to GitHub Pages Branch
