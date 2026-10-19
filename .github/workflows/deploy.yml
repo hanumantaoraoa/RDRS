@@ -109,11 +109,11 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./docs
         publish_branch: ph-pages
-    - name: publish to mainn
-      run: |
-        git config --global hanumantaraoa.hanumantaraoa@gmail.com
-        git config --global hanumantaraoa.hanumantarao "Your Name"
-        git add docs/
-        git commit -m "Add local documentation build"
-        git push origin main
+    # - name: publish to mainn
+      # run: |
+        # git config --global hanumantaraoa.hanumantaraoa@gmail.com
+        # git config --global hanumantaraoa.hanumantarao "Your Name"
+        # git add docs/
+        # git commit -m "Add local documentation build"
+        # git push origin main
 
