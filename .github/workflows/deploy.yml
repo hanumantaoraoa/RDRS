@@ -111,6 +111,8 @@ jobs:
         publish_branch: ph-pages
     - name: publish to mainn
       run: |
+        git config --global hanumantaraoa.hanumantaraoa@gmail.com
+        git config --global hanumantaraoa.hanumantarao "Your Name"
         git add docs/
         git commit -m "Add local documentation build"
         git push origin main
