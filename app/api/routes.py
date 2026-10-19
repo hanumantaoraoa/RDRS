@@ -53,7 +53,7 @@ def export_gh_pages():
     """Generates the static JSON state for the GitHub Pages host monitoring webpage."""
     session = SessionLocal()
     alerts = session.query(AlertRecord).order_by(AlertRecord.timestamp.desc()).all()
-    events_count = session.query(DBFileEvent).count()
+    events_count = session.query(FileEventRecord).count()
 
     payload = {
         "last_updated": str(datetime.datetime.utcnow()),
