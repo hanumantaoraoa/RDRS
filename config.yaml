@@ -1,6 +1,7 @@
 system:
   environment: "simulation"
   quarantine_dir: "./data/quarantine"
+  gh_pages_dir: "docs"
   watch_paths:
     - "./data/sandbox"
 
