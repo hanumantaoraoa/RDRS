@@ -109,8 +109,8 @@ jobs:
         branch: gh-pages
         folder: build
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./docs
         publish_branch: main
+        publish_dir: ./docs
     # - name: publish to mainn
       # run: |
         # git config --global hanumantaraoa.hanumantaraoa@gmail.com
