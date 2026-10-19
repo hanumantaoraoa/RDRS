@@ -109,7 +109,6 @@ jobs:
         branch: gh-pages
         folder: build
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_branch: main
         publish_dir: ./docs
     # - name: publish to mainn
       # run: |
