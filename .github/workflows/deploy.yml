@@ -109,3 +109,9 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./docs
         publish_branch: ph-pages
+    - name: publish to mainn
+      run: |
+        git add docs/
+        git commit -m "Add local documentation build"
+        git push origin main
+
