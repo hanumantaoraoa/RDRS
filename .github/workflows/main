@@ -1,0 +1,119 @@
+name: RDRS Telemetry and GitHub Pages Deployment Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  schedule:
+    # Automatically triggers a telemetry refresh every hour
+    - cron: '0 * * * *'
+  workflow_dispatch:
+    # Allows you to manually trigger the dashboard generation from GitHub UI
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  test-and-build:
+    name: Run Telemetry Suite and Compile Static Assets
+    runs-on: self-hosted
+    
+    steps:
+    - name: Checkout Code Repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python Development Environment
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+        cache: 'pip'
+
+    - name: Install System Dependencies
+      run: |
+        # sudo apt-get update
+        # sudo apt-get install -y procps gcc
+
+    - name: Install Python Package Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    
+    - name: Execute Automated Testing Framework
+      env:
+        PYTHONPATH: .
+      run: |
+        python -m app.main &
+        python -m tests.test_attack
+
+    
+    - name: Build Application System and Extract Dashboard Telemetry
+      env:
+        PYTHONPATH: .
+      run: |
+        # Create configuration if missing, ensuring simulation mode is running
+        if [ ! -f config.yaml ]; then
+            echo -e "system:\n  simulation_mode: true\n  gh_pages_dir: 'docs'" > config.yaml
+        fi
+        
+        # Execute the python generator script directly to output static assets to docs/
+        python -c "
+        import os
+        from app.core.config import load_config
+        from app.database.connection import init_db
+        from app.api.routes import export_gh_pages
+        
+        config = load_config()
+        init_db(config.database.url)
+        
+        # Call the operational route logic directly to output dashboard_data.json
+        export_gh_pages()
+        print('Static monitoring telemetry payload successfully compiled.')
+        "
+
+    - name: Ensure Static HTML Present
+      run: |
+        # Verifies the docs folder exists and injects default index if missing
+        mkdir -p docs
+        if [ ! -f docs/index.html ]; then
+          cat << 'EOF' > docs/index.html
+          <!DOCTYPE html>
+          <html>
+          <head>
+              <title>RDRS Deployment Security Status</title>
+              <style>body { font-family: monospace; background: #0f141c; color: #76e38c; padding: 5%; }</style>
+          </head>
+          <body>
+              <h2>RDRS Cloud Monitoring Matrix Node</h2>
+              <div id="view">Awaiting status data matrix...</div>
+              <script>
+                  fetch('./dashboard_data.json')
+                      .then(res => res.json())
+                      .then(data => {
+                          document.getElementById('view').innerHTML = `
+                              <p><b>Last Status Synchronization:</b> ${data.last_updated}</p>
+                              <p><b>Total Sandbox Operations Logged:</b> ${data.total_events}</p>
+                              <h3>Recent System Alert Logs</h3>
+                              <ul>${data.alerts.length ? data.alerts.map(a => `<li>[Score: \${a.score}] Process: \({a.process} -\){a.desc}</li>`).join('') : '<li>No active alerts recorded.</li>'}</ul>
+                          `;
+                      }).catch(e => { document.getElementById('view').innerText = "Telemetry dataset payload unavailable."; });
+              </script>
+          </body>
+          </html>
+        EOF
+        fi
+
+    - name: Deploy Static Webpage Assets to GitHub Pages Branch
+      uses: peaceiris/actions-gh-pages@v4
+      with:
+        branch: gh-pages
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_branch: main
+        publish_dir: ./docs
+    - name: publish to main
+      run: |
+        git config --global hanumantaraoa.hanumantaraoa@gmail.com
+        git config --global hanumantaraoa.hanumantarao "Your Name"
+        git add .
+        git commit -m "Add local documentation build"
+        git push origin main
