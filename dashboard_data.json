@@ -1,5 +1,251 @@
 {
-  "last_updated": "2026-10-19 12:59:29.037030",
-  "total_events": 0,
-  "alerts": []
+  "last_updated": "2026-10-20 15:26:01.454704",
+  "total_events": 49,
+  "alerts": [
+    {
+      "timestamp": "2026-10-16 06:43:32.112775",
+      "id": 35,
+      "process": "High frequency modification event burst pattern detected. | Correlated resource computational execution utilization spike observed.",
+      "score": 55.0,
+      "desc": "Simulated Interdiction"
+    },
+    {
+      "timestamp": "2026-10-16 06:43:27.842716",
+      "id": 34,
+      "process": "High frequency modification event burst pattern detected. | Correlated resource computational execution utilization spike observed.",
+      "score": 55.0,
+      "desc": "Simulated Interdiction"
+    },
+    {
+      "timestamp": "2026-10-16 06:43:24.857713",
+      "id": 33,
+      "process": "High frequency modification event burst pattern detected. | Correlated resource computational execution utilization spike observed.",
+      "score": 55.0,
+      "desc": "Simulated Interdiction"
+    },
+    {
+      "timestamp": "2026-10-16 06:43:21.035576",
+      "id": 32,
+      "process": "High frequency modification event burst pattern detected. | Correlated resource computational execution utilization spike observed.",
+      "score": 55.0,
+      "desc": "Simulated Interdiction"
+    },
+    {
+      "timestamp": "2026-10-16 06:43:17.850992",
+      "id": 31,
+      "process": "High frequency modification event burst pattern detected. | Correlated resource computational execution utilization spike observed.",
+      "score": 55.0,
+      "desc": "Simulated Interdiction"
+    },
+    {
+      "timestamp": "2026-10-16 06:43:14.108914",
+      "id": 30,
+      "process": "High frequency modification event burst pattern detected. | Correlated resource computational execution utilization spike observed.",
+      "score": 55.0,
+      "desc": "Simulated Interdiction"
+    },
+    {
+      "timestamp": "2026-10-16 06:43:11.496197",
+      "id": 29,
+      "process": "High frequency modification event burst pattern detected. | Correlated resource computational execution utilization spike observed.",
+      "score": 55.0,
+      "desc": "Simulated Interdiction"
+    },
+    {
+      "timestamp": "2026-10-16 06:43:08.595806",
+      "id": 28,
+      "process": "High frequency modification event burst pattern detected. | Correlated resource computational execution utilization spike observed.",
+      "score": 55.0,
+      "desc": "Simulated Interdiction"
+    },
+    {
+      "timestamp": "2026-10-16 06:43:05.664999",
+      "id": 27,
+      "process": "High frequency modification event burst pattern detected. | Correlated resource computational execution utilization spike observed.",
+      "score": 55.0,
+      "desc": "Simulated Interdiction"
+    },
+    {
+      "timestamp": "2026-10-16 06:43:02.841936",
+      "id": 26,
+      "process": "High frequency modification event burst pattern detected. | Correlated resource computational execution utilization spike observed.",
+      "score": 55.0,
+      "desc": "Simulated Interdiction"
+    },
+    {
+      "timestamp": "2026-10-16 06:42:59.216796",
+      "id": 25,
+      "process": "High frequency modification event burst pattern detected. | Correlated resource computational execution utilization spike observed.",
+      "score": 55.0,
+      "desc": "Simulated Interdiction"
+    },
+    {
+      "timestamp": "2026-10-16 06:42:56.443952",
+      "id": 24,
+      "process": "High frequency modification event burst pattern detected. | Correlated resource computational execution utilization spike observed.",
+      "score": 55.0,
+      "desc": "Simulated Interdiction"
+    },
+    {
+      "timestamp": "2026-10-16 06:42:53.458569",
+      "id": 23,
+      "process": "High frequency modification event burst pattern detected. | Correlated resource computational execution utilization spike observed.",
+      "score": 55.0,
+      "desc": "Simulated Interdiction"
+    },
+    {
+      "timestamp": "2026-10-16 06:42:50.542301",
+      "id": 22,
+      "process": "High frequency modification event burst pattern detected. | Correlated resource computational execution utilization spike observed.",
+      "score": 55.0,
+      "desc": "Simulated Interdiction"
+    },
+    {
+      "timestamp": "2026-10-16 06:42:47.120380",
+      "id": 21,
+      "process": "High frequency modification event burst pattern detected. | Correlated resource computational execution utilization spike observed.",
+      "score": 55.0,
+      "desc": "Simulated Interdiction"
+    },
+    {
+      "timestamp": "2026-10-16 06:42:43.463820",
+      "id": 20,
+      "process": "High frequency modification event burst pattern detected. | Correlated resource computational execution utilization spike observed.",
+      "score": 55.0,
+      "desc": "Simulated Interdiction"
+    },
+    {
+      "timestamp": "2026-10-16 06:42:40.465355",
+      "id": 19,
+      "process": "High frequency modification event burst pattern detected. | Correlated resource computational execution utilization spike observed.",
+      "score": 55.0,
+      "desc": "Simulated Interdiction"
+    },
+    {
+      "timestamp": "2026-10-16 06:42:37.966870",
+      "id": 18,
+      "process": "High frequency modification event burst pattern detected. | Correlated resource computational execution utilization spike observed.",
+      "score": 55.0,
+      "desc": "Simulated Interdiction"
+    },
+    {
+      "timestamp": "2026-10-16 06:42:33.317986",
+      "id": 17,
+      "process": "High frequency modification event burst pattern detected. | Correlated resource computational execution utilization spike observed.",
+      "score": 55.0,
+      "desc": "Simulated Interdiction"
+    },
+    {
+      "timestamp": "2026-10-16 06:42:29.121541",
+      "id": 16,
+      "process": "High frequency modification event burst pattern detected. | Correlated resource computational execution utilization spike observed.",
+      "score": 55.0,
+      "desc": "Simulated Interdiction"
+    },
+    {
+      "timestamp": "2026-10-16 06:42:26.238520",
+      "id": 15,
+      "process": "High frequency modification event burst pattern detected. | Correlated resource computational execution utilization spike observed.",
+      "score": 55.0,
+      "desc": "Simulated Interdiction"
+    },
+    {
+      "timestamp": "2026-10-16 06:42:21.734315",
+      "id": 14,
+      "process": "High frequency modification event burst pattern detected. | Correlated resource computational execution utilization spike observed.",
+      "score": 55.0,
+      "desc": "Simulated Interdiction"
+    },
+    {
+      "timestamp": "2026-10-16 06:42:19.011312",
+      "id": 13,
+      "process": "High frequency modification event burst pattern detected. | Correlated resource computational execution utilization spike observed.",
+      "score": 55.0,
+      "desc": "Simulated Interdiction"
+    },
+    {
+      "timestamp": "2026-10-16 06:42:15.285450",
+      "id": 12,
+      "process": "High frequency modification event burst pattern detected. | Correlated resource computational execution utilization spike observed.",
+      "score": 55.0,
+      "desc": "Simulated Interdiction"
+    },
+    {
+      "timestamp": "2026-10-16 06:42:12.576135",
+      "id": 11,
+      "process": "High frequency modification event burst pattern detected. | Correlated resource computational execution utilization spike observed.",
+      "score": 55.0,
+      "desc": "Simulated Interdiction"
+    },
+    {
+      "timestamp": "2026-10-16 06:42:09.879231",
+      "id": 10,
+      "process": "High frequency modification event burst pattern detected. | Correlated resource computational execution utilization spike observed.",
+      "score": 55.0,
+      "desc": "Simulated Interdiction"
+    },
+    {
+      "timestamp": "2026-10-16 06:42:05.977249",
+      "id": 9,
+      "process": "High frequency modification event burst pattern detected. | Correlated resource computational execution utilization spike observed.",
+      "score": 55.0,
+      "desc": "Simulated Interdiction"
+    },
+    {
+      "timestamp": "2026-10-16 06:42:03.606013",
+      "id": 8,
+      "process": "High frequency modification event burst pattern detected. | Correlated resource computational execution utilization spike observed.",
+      "score": 55.0,
+      "desc": "Simulated Interdiction"
+    },
+    {
+      "timestamp": "2026-10-16 06:41:59.267221",
+      "id": 7,
+      "process": "High frequency modification event burst pattern detected. | Correlated resource computational execution utilization spike observed.",
+      "score": 55.0,
+      "desc": "Simulated Interdiction"
+    },
+    {
+      "timestamp": "2026-10-16 06:41:56.210606",
+      "id": 6,
+      "process": "High frequency modification event burst pattern detected. | Correlated resource computational execution utilization spike observed.",
+      "score": 55.0,
+      "desc": "Simulated Interdiction"
+    },
+    {
+      "timestamp": "2026-10-16 06:41:52.203044",
+      "id": 5,
+      "process": "High frequency modification event burst pattern detected. | Correlated resource computational execution utilization spike observed.",
+      "score": 55.0,
+      "desc": "Simulated Interdiction"
+    },
+    {
+      "timestamp": "2026-10-16 06:41:49.432789",
+      "id": 4,
+      "process": "High frequency modification event burst pattern detected. | Correlated resource computational execution utilization spike observed.",
+      "score": 55.0,
+      "desc": "Simulated Interdiction"
+    },
+    {
+      "timestamp": "2026-10-16 06:41:44.937065",
+      "id": 3,
+      "process": "High frequency modification event burst pattern detected. | Correlated resource computational execution utilization spike observed.",
+      "score": 55.0,
+      "desc": "Simulated Interdiction"
+    },
+    {
+      "timestamp": "2026-10-16 06:41:42.012644",
+      "id": 2,
+      "process": "High frequency modification event burst pattern detected. | Correlated resource computational execution utilization spike observed.",
+      "score": 55.0,
+      "desc": "Simulated Interdiction"
+    },
+    {
+      "timestamp": "2026-10-16 06:41:38.646834",
+      "id": 1,
+      "process": "High frequency modification event burst pattern detected. | Correlated resource computational execution utilization spike observed.",
+      "score": 55.0,
+      "desc": "Simulated Interdiction"
+    }
+  ]
 }
