@@ -1,4 +1,4 @@
-name: RDRS Telemetry and GitHub Pages Deployment Pipeline
+name: RDRS Telemetry and GitHub Pages Deployment Pipeline 
 
 on:
   push:
