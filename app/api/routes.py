@@ -11,7 +11,7 @@ from app.database.models import AlertRecord, FileEventRecord, ProcessRecord
 from app.core.config import load_config
 
 router = APIRouter()
-
+config = load_config()
 
 def get_db_context():
     db = SessionLocal()
