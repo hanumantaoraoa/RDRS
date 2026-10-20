@@ -7,6 +7,7 @@ class SystemConfig(BaseModel):
     environment: str
     quarantine_dir: str
     watch_paths: List[str]
+    gh_pages_dir: str
 
 class ThresholdConfig(BaseModel):
     entropy_critical: float
