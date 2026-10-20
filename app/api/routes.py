@@ -58,8 +58,8 @@ def export_gh_pages():
     payload = {
         "last_updated": str(datetime.datetime.utcnow()),
         "total_events": events_count,
-        "alerts": [{"timestamp": str(a.timestamp), "id": a.id, "process": a.process_name, "score": a.threat_score,
-                    "desc": a.description} for a in alerts]
+        "alerts": [{"timestamp": str(a.timestamp), "id": a.id, "process": a.reason, "score": a.threat_score,
+                    "desc": a.status} for a in alerts]
     }
     session.close()
 
