@@ -25,5 +25,10 @@ jobs:
         git config --global hanumantaraoa.hanumantaraoa@gmail.com
         git config --global hanumantaraoa.hanumantaraoa "Your Name" 
         git add .
-        git commit -m "Add local documentation build"
-        git push origin main
+        # Only commit and push if there are actual changes to prevent workflow errors
+        if ! git diff --cached --quiet; then
+            git commit -m "chore: auto-update changed files [skip ci]"
+            git push
+        else
+            echo "No changes detected to commit."
+        fi
