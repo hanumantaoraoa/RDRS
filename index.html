@@ -1,23 +1,42 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>RDRS Deployment Security Status</title>
-    <style>body { font-family: monospace; background: #0f141c; color: #76e38c; padding: 5%; }</style>
+<meta charset="UTF-8">
+ <title>RDRS Deployment Security Status</title>
+<style>
+   body { 
+    font-family: monospace; 
+    background: #0f141c; 
+    color: #76e38c; 
+    padding: 5px; 
+   }
+</style>
 </head>
 <body>
-    <h2>RDRS Cloud Monitoring Matrix Node</h2>
-    <div id="view">Awaiting status data matrix...</div>
-     <script>
-        fetch('./dashboard_data.json')
-             .then(res => res.json())
-             .then(data => {
-                  document.getElementById('view').innerHTML = `
-                      <p><b>Last Status Synchronization:</b> ${data.last_updated}</p>
-                      <p><b>Total Sandbox Operations Logged:</b> ${data.total_events}</p>
-                      <h3>Recent System Alert Logs</h3>
-                      <ul>${data.alerts.length ? data.alerts.map(a => `<li>[Score: \${a.threat_score}] Process: \({a.suspect_process} -\){a.reason}</li>`).join('') : '<li>No active alerts recorded.</li>'}</ul>
-                  `;
-              }).catch(e => { document.getElementById('view').innerText = "Telemetry dataset payload unavailable."; });
-      </script>
-  </body>
-  </html>
+<h2>RDRS Cloud Monitoring Matrix Node</h2>
+<div id="view">Awaiting status data matrix...</div>
+
+<script>
+ fetch('dashboard_data.json')
+    .then(response => response.json())
+    .then(data => {
+        // Generate the list items from alerts, fallback if empty
+        const alertsList = data.alerts && data.alerts.length > 0 
+            ? data.alerts.map(a => `<li>Score: ${a.score} | Process: ${a.process} | Description: ${a.desc}</li>`).join('')
+            : '<li>No active alerts recorded</li>';
+
+        document.getElementById('view').innerHTML = `
+            <p><b>Last Status Synchronization:</b> ${data.last_updated}</p>
+            <p><b>Total Sandbox Operations Logged:</b> ${data.total_events}</p>
+            <h3>Recent System Alert Logs</h3>
+            <ul>${alertsList}</ul>
+        `;
+    })
+    .catch(e => {
+        console.error(e);
+        document.getElementById('view').innerText = 'Telemetry dataset payload unavailable';
+    });
+</script>
+</body>
+</html>
+
