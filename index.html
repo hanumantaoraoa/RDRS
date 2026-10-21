@@ -1,53 +1,25 @@
-
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <title>RDRS Defense Center Monitor Panel</title>
-        <meta http-equiv="refresh" content="3">
-        <style>
-            body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 30px; background-color: #0f172a; color: #e2e8f0; }
-            h1 { color: #f43f5e; border-bottom: 2px solid #334155; padding-bottom: 10px; }
-            .grid { display: flex; gap: 20px; }
-            .section { flex: 1; background: #1e293b; padding: 20px; border-radius: 8px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.5); }
-            table { width: 100%; border-collapse: collapse; margin-top: 15px; }
-            th, td { text-align: left; padding: 10px; border-bottom: 1px solid #334155; font-size: 13px; }
-            th { background-color: #334155; color: #f8fafc; }
-            .badge-alert { background-color: #ef4444; color: white; padding: 2px 6px; border-radius: 4px; font-weight: bold; }
-        </style>
-    </head>
-    <body>
-        <h1>🛡️ RDRS Ransomware Security Defense Control Center</h1>
-        <p>Live endpoint monitoring activity streams active. Interface auto-refreshes every 3s.</p>
-        <div class="grid">
-            <div class="section">
-                <h2>⚠️ Security Countermeasures Alerts Logs</h2>
-                <table>
-                    <tr><th>ID</th><th>Score</th><th>Trigger PID</th><th>Description</th></tr>
-                    
-                </table>
-            </div>
-            <div class="section">
-                <h2>📊 Telemetry Streaming Events Tracked</h2>
-                <table>
-                    <tr><th>Type</th><th>Target File Source Path</th><th>Entropy</th><th>Process Context</th></tr>
-                    
-                    <tr>
-                        <td><strong>MODIFY</strong></td>
-                        <td>./rdrs/data/sandbox\random_text.txt</td>
-                        <td>6.4889</td>
-                        <td>python.exe (16204)</td>
-                    </tr>
-                    
-                    <tr>
-                        <td><strong>CREATE</strong></td>
-                        <td>./rdrs/data/sandbox\random_text.txt</td>
-                        <td>0.0</td>
-                        <td>python.exe (16204)</td>
-                    </tr>
-                    
-                </table>
-            </div>
-        </div>
-    </body>
-    </html>
-    
+f"""
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RDRS Deployment Security Status</title>
+    <style>body { font-family: monospace; background: #0f141c; color: #76e38c; padding: 5%; }</style>
+</head>
+<body>
+    <h2>RDRS Cloud Monitoring Matrix Node</h2>
+    <div id="view">Awaiting status data matrix...</div>
+     <script>
+        fetch('./dashboard_data.json')
+             .then(res => res.json())
+             .then(data => {
+                  document.getElementById('view').innerHTML = `
+                      <p><b>Last Status Synchronization:</b> ${data.last_updated}</p>
+                      <p><b>Total Sandbox Operations Logged:</b> ${data.total_events}</p>
+                      <h3>Recent System Alert Logs</h3>
+                      <ul>${data.alerts.length ? data.alerts.map(a => `<li>[Score: \${a.score}] Process: \({a.process} -\){a.desc}</li>`).join('') : '<li>No active alerts recorded.</li>'}</ul>
+                  `;
+              }).catch(e => { document.getElementById('view').innerText = "Telemetry dataset payload unavailable."; });
+      </script>
+  </body>
+  </html>
+  """
