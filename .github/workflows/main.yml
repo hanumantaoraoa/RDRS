@@ -96,7 +96,7 @@ jobs:
                               <p><b>Last Status Synchronization:</b> ${data.last_updated}</p>
                               <p><b>Total Sandbox Operations Logged:</b> ${data.total_events}</p>
                               <h3>Recent System Alert Logs</h3>
-                              <ul>${data.alerts.length ? data.alerts.map(a => `<li>[Score: \${a.score}] Process: \({a.process} -\){a.desc}</li>`).join('') : '<li>No active alerts recorded.</li>'}</ul>
+                              <ul>${data.alerts.length ? data.alerts.map(a => `<li>[Score: \${a.threat_score}] Process: \({a.suspect_process} -\){a.reason}</li>`).join('') : '<li>No active alerts recorded.</li>'}</ul>
                           `;
                       }).catch(e => { document.getElementById('view').innerText = "Telemetry dataset payload unavailable."; });
               </script>
