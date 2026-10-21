@@ -19,16 +19,6 @@ jobs:
     name: Run Telemetry Suite and Compile Static Assets
     runs-on: self-hosted
     
-    steps:
-    - name: Checkout Code Repository
-      uses: actions/checkout@v4
-
-    - name: Set up Python Development Environment
-      uses: actions/setup-python@v5
-      with:
-        python-version: '3.11'
-        cache: 'pip'
-   
     
     - name: publish to main
       run: |
