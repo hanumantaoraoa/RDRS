@@ -24,7 +24,7 @@ class WeightConfig(BaseModel):
     unknown_program_weight: float
 
 class DatabaseConfig(BaseModel):
-    url: str
+    url: str = "sqlite:///data/rdrs.db"
 
 class ServerConfig(BaseModel):
     host: str
