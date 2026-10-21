@@ -103,6 +103,13 @@ jobs:
           </html>
         EOF
 
+    - name: Deploy Static Webpage Assets to GitHub Pages Branch
+      uses: peaceiris/actions-gh-pages@v4
+      with:
+        branch: gh-pages
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_branch: main
+        publish_dir: ./docs
     # 1. Checkout the TARGET branch where index.html lives (e.g., main)
     - name: Checkout Target Branch
       uses: actions/checkout@v4
@@ -113,7 +120,7 @@ jobs:
           git config --global user.name "github-actions[bot]"
           git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
           
-          git add docs/index.html
+          git add index.html
           
           # Check if there are changes before committing to prevent empty commit errors
           if ! git diff --cached --quiet; then
