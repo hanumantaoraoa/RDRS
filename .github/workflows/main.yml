@@ -45,7 +45,7 @@ jobs:
         PYTHONPATH: .
       run: |
         python -m app.main &
-        python -m pytest --cov=app tests\
+        python -m pytest --cov=app tests/
 
     # 1. Checkout the TARGET branch where index.html lives (e.g., main)
     - name: Checkout Target Branch
