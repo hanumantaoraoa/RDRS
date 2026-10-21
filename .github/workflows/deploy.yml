@@ -19,7 +19,7 @@ jobs:
     name: Run Telemetry Suite and Compile Static Assets
     runs-on: self-hosted
     
-    
+    steps:
     - name: publish to main
       run: |
         git config --global hanumantaraoa.hanumantaraoa@gmail.com
