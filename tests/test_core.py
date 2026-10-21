@@ -1,8 +1,8 @@
 import os
 import pytest
 from pathlib import Path
-from rdrs.app.core.entropy import calculate_shannon_entropy
-from rdrs.app.core.config import load_config
+from app.core.entropy import calculate_shannon_entropy
+from app.core.config import load_config
 
 def test_entropy_of_zero_file(tmp_path):
     empty_file = tmp_path / "empty.dat"
@@ -18,4 +18,4 @@ def test_entropy_high_value(tmp_path):
 
 def test_config_parsing_handling():
     with pytest.raises(FileNotFoundError):
-        load_config("rdrs/non_existent_path_file.yaml")
+        load_config("non_existent_path_file.yaml")
