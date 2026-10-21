@@ -78,7 +78,6 @@ jobs:
         # Verifies the docs folder exists and injects default index if missing
         mkdir -p docs
         cat << 'EOF' > docs/index.html
-        f"""
         <!DOCTYPE html>
         <html>
         <head>
@@ -102,7 +101,6 @@ jobs:
               </script>
           </body>
           </html>
-          """
         EOF
 
     - name: Deploy Static Webpage Assets to GitHub Pages Branch
