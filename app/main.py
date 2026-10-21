@@ -43,7 +43,7 @@ def main():
         while True:
             time.sleep(2)
             # Continually flush state outputs down into persistent generation file arrays
-            generate_reports()
+            generate_reports("reports")
     except KeyboardInterrupt:
         print("\n[AUDIT] Security Matrix Interdiction shutdown triggered by Operator command.")
     finally:
