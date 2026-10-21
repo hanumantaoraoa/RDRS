@@ -35,7 +35,7 @@ def create_high_entropy_file(file_path: str, size_kb: int = 10) -> float:
 
 def main():
     try:
-        config = load_config("rdrs/config.yaml")
+        config = load_config("config.yaml")
         sandbox_dir = config.system.monitored_directory
     except Exception as e:
         logger.error(f"Failed to resolve system directory config: {e}")
