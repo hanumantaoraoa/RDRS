@@ -29,13 +29,7 @@ jobs:
         python-version: '3.11'
         cache: 'pip'
    
-    - name: Deploy Static Webpage Assets to GitHub Pages Branch
-      uses: peaceiris/actions-gh-pages@v4
-      with:
-        branch: gh-pages
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_branch: main
-        publish_dir: .
+    
     - name: publish to main
       run: |
         git config --global hanumantaraoa.hanumantaraoa@gmail.com
