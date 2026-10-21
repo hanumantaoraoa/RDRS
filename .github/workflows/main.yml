@@ -57,7 +57,7 @@ jobs:
       env:
         PYTHONPATH: .
       run: |
-       # Create configuration if missing, ensuring simulation mode is running
+        # Create configuration if missing, ensuring simulation mode is running
         if [ ! -f config.yaml ]; then
             echo -e "system:\n  simulation_mode: true\n  gh_pages_dir: 'docs'" > config.yaml
         fi
