@@ -21,6 +21,12 @@ jobs:
     runs-on: self-hosted
     
     steps:
+    # 1. Checkout the TARGET branch where index.html lives (e.g., main)
+    - name: Checkout Target Branch
+      uses: [actions/checkout](https://github.com "actions/checkout")
+      with:
+          ref: main # Change this to 'gh-pages' if that's where your static site is hosted
+    
     - name: Checkout Code Repository
       uses: actions/checkout@v4
 
@@ -47,11 +53,6 @@ jobs:
         python -m app.main &
         python -m pytest --cov=app tests/
 
-    # 1. Checkout the TARGET branch where index.html lives (e.g., main)
-    - name: Checkout Target Branch
-      uses: [actions/checkout](https://github.com "actions/checkout")
-      with:
-          ref: main # Change this to 'gh-pages' if that's where your static site is hosted
     
     - name: Build Application System and Extract Dashboard Telemetry
       env:
