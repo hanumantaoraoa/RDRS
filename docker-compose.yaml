@@ -1,0 +1,15 @@
+services:
+  version: '3.8'
+
+  services:
+    rdrs-detector:
+      build: .
+      container_name: rdrs_defensive_core
+      ports:
+        - "8000:8000"
+      volumes:
+        - ./data:/workspace/data
+        - ./logs:/workspace/logs
+        - ./reports:/workspace/reports
+      environment:
+        - PYTHONUNBUFFERED=1
