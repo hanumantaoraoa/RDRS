@@ -22,6 +22,8 @@ jobs:
     steps:
     - name: publish to main
       run: |
+        git config --global hanumantaraoa.hanumantaraoa@gmail.com
+        git config --global hanumantaraoa.hanumantaraoa "Your Name" 
         git add .
         git commit -m "Add local documentation build"
         git push origin main
