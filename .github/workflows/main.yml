@@ -21,10 +21,6 @@ jobs:
     runs-on: self-hosted
     
     steps:
-    - name: Checkout Target Branch
-      uses: [actions/checkout](https://github.com "actions/checkout")
-      with:
-          ref: main # Change this to 'gh-pages' if that's where your static site is hosted
     
     - name: Checkout Code Repository
       uses: actions/checkout@v4
